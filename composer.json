@@ -1,0 +1,28 @@
+{
+  "name": "paragonie/yolocrypto",
+  "description": "A proactively insecure cryptography library",
+  "keywords": [
+    "vulnerable",
+    "insecure",
+    "cryptography"
+  ],
+  "autoload": {
+    "psr-4": {
+      "ParagonIE\\YoloCrypto\\": "src"
+    }
+  },
+  "authors": [
+    {
+      "name":     "Paragon Initiative Enterprises",
+      "email":    "security@paragonie.com",
+      "homepage": "https://paragonie.com"
+    }
+  ],
+  "require": {
+    "php": "^7.0.4",
+    "ext-mcrypt": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.*|5.*"
+  }
+}
