@@ -40,7 +40,7 @@ class YoloTest extends PHPUnit_Framework_TestCase
         } catch (\Exception $ex) {
             $this->assertEquals(
                 'Invalid message authentication code',
-                $ex
+                $ex->getMessage()
             );
         }
     }

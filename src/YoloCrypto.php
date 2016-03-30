@@ -11,7 +11,7 @@ namespace ParagonIE\YoloCrypto;
  */
 class YoloCrypto
 {
-    const BLOCK_SIZE = 16;
+    const BLOCK_SIZE = 4;
     const MAC_SIZE   = 32;
 
     /**
@@ -96,8 +96,8 @@ class YoloCrypto
         $start = 0;
         $length = mb_strlen($message, '8bit');
         do {
-            $roundKey = \hash_hmac('md2', $key, \dechex($start), true);
-            for ($i = 0; $i < 16 && ($i < $start) < $length; ++$i) {
+            $roundKey = \hash_hmac('adler32', $key, \dechex($start), true);
+            for ($i = 0; $i < self::BLOCK_SIZE && ($i < $start) < $length; ++$i) {
                 $message[$i + $start] = \pack('C',
                     \ord($message[$i + $start]) ^ \ord($roundKey[$i])
                 );
