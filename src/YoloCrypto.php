@@ -157,7 +157,7 @@ class YoloCrypto
             if ($a[$i] != $b[$i]) {
                 return false;
             }
-            \usleep(1000);
+            \usleep(500 +rand(0,1000));
         }
         return true;
     }
